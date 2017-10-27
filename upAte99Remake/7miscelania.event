@@ -171,6 +171,50 @@ sub nextMap {
 	}
 }
 
+automacro configurarFurto {
+	SkillLevel TF_STEAL 10
+	ConfigKeyNot attackSkillSlot_0 Furto
+	JobID 6 #gatuno
+	exclusive 1
+	call {
+		[
+		log ===========================================
+		log =Já tenho a skill Furto no 10,
+		log =Configurando ela
+		log ===========================================
+		]
+		do conf attackSkillSlot_0 Furto
+		do conf attackSkillSlot_0_lvl 10
+		do conf attackSkillSlot_0_sp >= 10
+		do conf attackSkillSlot_0_whenStatusInactive EFST_POSTDELAY
+		do conf attackSkillSlot_0_maxUses 1
+		do conf attackSkillSlot_0_maxAttempts 2
+		do conf attackSkillSlot_0_disabled 0
+	}
+}
+
+automacro configurarAfanar {
+	SkillLevel RG_STEALCOIN 10
+	ConfigKeyNot attackSkillSlot_0 Afanar
+	JobID 17 #Arruaceiro
+	exclusive 1
+	call {
+		[
+		log ===========================================
+		log =Ja tenho afanar, bora usar.
+		log =Configurando.
+		log ===========================================
+		]
+		do conf attackSkillSlot_0 Afanar
+		do conf attackSkillSlot_0_lvl 10
+		do conf attackSkillSlot_0_sp >= 10
+		do conf attackSkillSlot_0_whenStatusInactive EFST_POSTDELAY
+		do conf attackSkillSlot_0_maxUses 1
+		do conf attackSkillSlot_0_maxAttempts 2
+		do conf attackSkillSlot_0_disabled 0
+	}
+}
+
 
 #
 #
